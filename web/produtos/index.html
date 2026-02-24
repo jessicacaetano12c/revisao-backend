@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nossos Produtos | BenStore</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <a href="../index.html" class="logo">BenStore</a>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Início</a></li>
+                <li><a href="index.html">Produtos</a></li>
+                <li><a href="../cadastro/index.html">Cadastrar</a></li>
+                <li>
+                    <button class="theme-toggle" title="Alternar Tema">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="products-header">
+            <h1>Catálogo de Produtos</h1>
+            <p>Confira nossa seleção de produtos disponíveis.</p>
+        </div>
+
+        <div id="productsGrid" class="products-grid">
+            <!-- Products will be injected here -->
+            <div class="loading">Carregando produtos...</div>
+        </div>
+    </main>
+
+    <script src="../script.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
