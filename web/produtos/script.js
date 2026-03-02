@@ -38,7 +38,7 @@ function renderProducts(products) {
                 <button class="btn-edit" title="Editar Produto">
                     <i class="fas fa-edit"></i> Editar
                 </button>
-                <button class="btn-delete" title="Excluir Produto">
+                <button class="btn-delete" title="Excluir Produto" onclick="deleteProduct(${product.id})">
                     <i class="fas fa-trash"></i> Apagar
                 </button>
             </div>
@@ -48,3 +48,23 @@ function renderProducts(products) {
 
 // Initial fetch
 fetchProducts();
+
+async function deleteProduct(id) {
+    if (confirm('Tem certeza que deseja apagar este produto?')) {
+        try {
+            const response = await fetch(`http://localhost:3333/produtos/${id}`, {
+                method: 'DELETE'
+            });
+
+            if (response.ok) {
+                alert('Produto apagado!');
+                fetchProducts();
+            } else {
+                alert('Não foi possível apagar o produto.');
+            }
+        } catch (error) {
+            console.error('Error deleting product:', error);
+            alert('Erro ao apagar o produto.');
+        }
+    }
+}
